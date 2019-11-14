@@ -2,14 +2,16 @@ Clase Boleto
     definir tipo como caracter
     definir precio como real
     definir cantBoleto como Entero
+    definir montoPreDesc como real
     definir desc como real
+    definir totalPagar como real
 
     metodo leerTipo()
         mostrar "Ingrese una de las siguientes letras para seleccionar el tipo de boleto a comprar: v, p, g"
         leer tipo
     Fin metodo
 
-    metodo leerCantBoleto()
+    metodo leerCantidad()
         mostrar "Ingrese la cantidad de boletos a comprar: "
         leer cantBoleto
     fin metodo
@@ -22,7 +24,7 @@ Clase Boleto
         mostrar "El precio del tipo de boleto comprado es: " precio
     fin metodo
 
-    metodo mostrarCantBoleto()
+    metodo mostrarCantidad()
         mostrar "La cantidad de boletos comprados es: " cantBoleto
     Fin metodo
 
@@ -41,13 +43,13 @@ Clase Boleto
 
     metodo calcularDescuento()
 
-        si (precio * cantBoleto ) <= 400000
+        si montoPreDesc <= 400000
             desc = precio * cantBoleto * 0.05
         sino
-            si (( precio * cantBoleto ) > 1400000) y (( precio * cantBoleto) < 1800000 )
+            si ( montoPreDesc > 1400000) y ( montoPreDesc < 1800000 )
                 desc = precio * cantBoleto * 0.07
             sino
-                si ( precio * cantBoleto ) >= 2400000
+                si montoPreDesc >= 2400000
                     desc = precio * cantBoleto * 0.1
                 sino
                     desc = precio * cantBoleto * 0.13
@@ -57,8 +59,16 @@ Clase Boleto
 
     fin metodo
 
-    metodo calcuMontoPreDesc()
-        mostrar "El monto sin el descuento es: " precio * cantBoleto
+    metodo calcuTotalPagar()
+        totalPagar = montoPreDesc - desc
+    fin metodo
+
+    metodo calcularMontoPreDesc()
+        montoPreDesc = precio * cantBoleto
+    fin metodo
+
+    metodo mostrarMontoPreDesc()
+        mostrar "El monto sin el descuento es: " montoPreDesc
     fin metodo
 
     metodo mostrarDescuento()
@@ -66,6 +76,25 @@ Clase Boleto
     fin metodo
 
     metodo mostrarTotalPagar()
-        mostrar "El total a pagar es: " precio * cantBoleto - desc
+        mostrar "El total a pagar es: " totalPagar
     fin metodo
 Fin clase 
+
+Algoritmo
+
+    definir entrada como entrada
+    entrada1 = nuevo Entrada()
+
+    entrada1.leerTipo
+    entrada1.leerCantidad
+
+    entrada1.mostrarCantidad()
+    entrada1.mostrarPrecio()
+    entrada1.calcularMontoPreDesc()
+    entrada1.mostrarMontoPreDesc()
+    entrada1.calcularDescuento()
+    entrada1.mostrarDescuento()
+    entrada1.calcuTotalPagar()
+    entrada1.mostrarTotalPagar()
+
+Fin Algoritmo

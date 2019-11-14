@@ -1,0 +1,30 @@
+Para entrar a una discoteca se ofrecen 3 tipos de boletos (el cual será ingresado con una letra (que pudiera ser escrita en mayúscula o minúscula):a los precios indicados. Tenga presente que en una compra se adquiere cierta cantidad de un sólo tipo de boleto.
+
+Tipo de boleto                   	Precio
+
+[V]ip                                  500.000  
+[P]referencial                         300.000
+[G]eneral                              150.000
+
+Y dependiendo del monto a pagar preliminar se otorgará un descuento :
+
+Total a Pagar                Porcentaje de Descto
+400.000 o menos                           5%
+Entre 1.400.000 y 1.800.000               7%
+A partir 2.400.000                        10%  
+Cualquier otro monto fuera de rango   	  13% 
+              
+Como salidas se debe mostrar lo siguiente:
+* Precio y cantidad de boletos a comprar
+* Monto pre-descuento
+* Monto del descuento
+* Total a Pagar (habiendo aplicado el descuento)
+1.- Defina la(s) clase(s) necesarias o relevantes segun el contexto que establece el enunciado
+
+2.- Defina los atributos con sus respectivos tipos de datos
+
+3.- Defina los metodos necesarios para resolver el problema
+
+4.- En el cuerpo principal, defina e instancie los objetos que hagan falta para resolver el problema propuesto en el enunciado
+
+5.- Haga el llamado de los metodos en el orden correcto para resolver el problema propuesto en el enunciado
