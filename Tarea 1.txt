@@ -1,0 +1,71 @@
+Clase Boleto
+    definir tipo como caracter
+    definir precio como real
+    definir cantBoleto como Entero
+    definir desc como real
+
+    metodo leerTipo()
+        mostrar "Ingrese una de las siguientes letras para seleccionar el tipo de boleto a comprar: v, p, g"
+        leer tipo
+    Fin metodo
+
+    metodo leerCantBoleto()
+        mostrar "Ingrese la cantidad de boletos a comprar: "
+        leer cantBoleto
+    fin metodo
+
+    metodo mostrarTipo()
+        mostrar "El tipo de boleto comprado es: " leerTipoBoleto
+    fin metodo
+
+    metodo mostrarPrecio()
+        mostrar "El precio del tipo de boleto comprado es: " precio
+    fin metodo
+
+    metodo mostrarCantBoleto()
+        mostrar "La cantidad de boletos comprados es: " cantBoleto
+    Fin metodo
+
+    metodo asignarPrecio()
+        segun tipo sea:
+            v:
+                precio = 500000
+
+            p:
+                precio = 300000
+
+            g:
+                precio = 150000
+        fin segun
+    Fin metodo
+
+    metodo calcularDescuento()
+
+        si (precio * cantBoleto ) <= 400000
+            desc = precio * cantBoleto * 0.05
+        sino
+            si (( precio * cantBoleto ) > 1400000) y (( precio * cantBoleto) < 1800000 )
+                desc = precio * cantBoleto * 0.07
+            sino
+                si ( precio * cantBoleto ) >= 2400000
+                    desc = precio * cantBoleto * 0.1
+                sino
+                    desc = precio * cantBoleto * 0.13
+                fin si
+            fin si
+        fin si
+
+    fin metodo
+
+    metodo calcuMontoPreDesc()
+        mostrar "El monto sin el descuento es: " precio * cantBoleto
+    fin metodo
+
+    metodo mostrarDescuento()
+        mostrar "El descuento es: " desc
+    fin metodo
+
+    metodo mostrarTotalPagar()
+        mostrar "El total a pagar es: " precio * cantBoleto - desc
+    fin metodo
+Fin clase 
