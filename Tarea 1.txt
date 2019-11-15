@@ -7,8 +7,13 @@ Clase Boleto
     definir totalPagar como real
 
     metodo leerTipo()
-        mostrar "Ingrese una de las siguientes letras para seleccionar el tipo de boleto a comprar: v, p, g"
-        leer tipo
+        repetir 
+		    mostrar "Ingrese una letra que corresponda al tipo de voleto [G]eneral, [P]resencial, [V]ip: "
+		    leer tipo
+		    si tipo <> "v" y tipo <> "V" y tipo <> "G" y tipo <> "g" y tipo <> "p" y tipo <> "P"
+			    mostrar "Ingrese un tipo de boleto Valido(G, P o V)"
+		    fin si
+	    Hasta Que tipo == "v" o tipo == "V" o tipo == "G" o tipo == "g" o tipo == "p" o tipo == "P"
     Fin metodo
 
     metodo leerCantidad()
@@ -29,27 +34,27 @@ Clase Boleto
     Fin metodo
 
     metodo asignarPrecio()
-        segun tipo sea:
-            v:
-                precio = 500000
 
-            p:
+        si tipo == "v" o tipo == "V" entonces
+            precio = 500000
+        sino
+            si tipo == "p" o tipo == "P" entonces
                 precio = 300000
-
-            g:
+            sino 
                 precio = 150000
-        fin segun
+            fin si
+        fin si
     Fin metodo
 
     metodo calcularDescuento()
 
-        si montoPreDesc <= 400000
+        si montoPreDesc <= 400000 entonces
             desc = precio * cantBoleto * 0.05
         sino
-            si ( montoPreDesc > 1400000) y ( montoPreDesc < 1800000 )
+            si ( montoPreDesc > 1400000) y ( montoPreDesc < 1800000 ) entonces
                 desc = precio * cantBoleto * 0.07
             sino
-                si montoPreDesc >= 2400000
+                si montoPreDesc >= 2400000 entonces
                     desc = precio * cantBoleto * 0.1
                 sino
                     desc = precio * cantBoleto * 0.13
